@@ -12,8 +12,7 @@ public class WordFrequencyGame {
 
             sortWordCountList(wordCountList);
 
-            StringJoiner wordFrequencyResult = buildWorldFrequencyResult(wordCountList);
-            return wordFrequencyResult.toString();
+            return buildWorldFrequencyResult(wordCountList);
         } catch (Exception exception) {
             return CALCULATE_ERROR;
         }
@@ -23,12 +22,8 @@ public class WordFrequencyGame {
         wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
     }
 
-    private StringJoiner buildWorldFrequencyResult(List<WordFrequency> wordCountList) {
-        StringJoiner wordFrequencyResult = new StringJoiner(LINE_FEED);
-        for (WordFrequency word : wordCountList) {
-            wordFrequencyResult.add(buildWordFrequencyLine(word));
-        }
-        return wordFrequencyResult;
+    private String buildWorldFrequencyResult(List<WordFrequency> wordCountList) {
+        return wordCountList.stream().map(this::buildWordFrequencyLine).collect(Collectors.joining(LINE_FEED));
     }
 
     private List<WordFrequency> calculateWordFrequency(String sentence) {
