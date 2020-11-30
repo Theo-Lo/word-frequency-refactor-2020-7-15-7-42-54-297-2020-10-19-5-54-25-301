@@ -3,7 +3,7 @@ import java.util.*;
 public class WordFrequencyGame {
     private static final String WHITE_SPACE_REGEX = "\\s+";
     private static final String CALCULATE_ERROR = "Calculate Error";
-    public static final String LINE_FEED = "\n";
+    private static final String LINE_FEED = "\n";
 
     public String getResult(String sentence) {
         if (sentence.split(WHITE_SPACE_REGEX).length == 1) {
