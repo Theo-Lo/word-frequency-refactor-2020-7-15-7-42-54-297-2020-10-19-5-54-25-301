@@ -10,13 +10,17 @@ public class WordFrequencyGame {
         try {
             List<WordFrequency> wordCountList = calculateWordFrequency(sentence);
 
-            wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
+            sortWordCountList(wordCountList);
 
             StringJoiner wordFrequencyResult = buildWorldFrequencyResult(wordCountList);
             return wordFrequencyResult.toString();
         } catch (Exception exception) {
             return CALCULATE_ERROR;
         }
+    }
+
+    private void sortWordCountList(List<WordFrequency> wordCountList) {
+        wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
     }
 
     private StringJoiner buildWorldFrequencyResult(List<WordFrequency> wordCountList) {
