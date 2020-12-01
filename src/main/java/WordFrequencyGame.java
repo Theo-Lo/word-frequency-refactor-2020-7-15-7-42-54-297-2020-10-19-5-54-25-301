@@ -6,7 +6,6 @@ public class WordFrequencyGame {
     private static final String LINE_FEED = "\n";
 
     public String getResult(String sentence) throws CalculateErrorException{
-        // add back exception handling instead of returning as a string
         try {
             List<WordFrequency> wordCountList = calculateWordFrequency(sentence);
 
