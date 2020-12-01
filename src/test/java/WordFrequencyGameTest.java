@@ -62,7 +62,7 @@ public class WordFrequencyGameTest {
     }
 
     @Test
-    public void should_throw_calculate_error_exception_when_get_result_given_sentence_is_null() throws Exception {
+    public void should_throw_calculate_error_exception_when_get_result_given_sentence_is_null(){
         //Given
         String sentence = null;
         assertThrows(CalculateErrorException.class, () -> {new WordFrequencyGame().getResult(sentence); }
